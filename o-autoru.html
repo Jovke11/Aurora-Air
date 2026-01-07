@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="sr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description"
+        content="Aurora Air nudi brzu i jednostavnu pretragu letova, povoljne cene, udobna sedišta i sigurno putovanje ka najpopularnijim svetskim destinacijama." />
+    <meta name="keywords"
+        content="Aurora Air, avio kompanija, letovi, avionske karte, rezervacija letova, pretraga letova, avio sajt, online booking, putovanja, destinacije" />
+    <meta name="author" content="Aleksa Jovanović" />
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="stylesheet" href="assets/css/responsive.css" />
+    <title>Aurora Air | Autor</title>
+    <link rel="shortcut icon" type="image/ico" href="assets/img/ikonica.png" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+        integrity="sha512-TwPFeirw42yvM3tGm3Z7ZZ9dxFYqkggd7GPsM8jLZQZVJ2KXAeJq3kt3SPf4rr8wYjH7fEIprfZCi1eWRJ4V2Q=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="sitemap" type="application/xml" href="sitemap.xml"/>    
+</head>
+
+<body>
+    <header id="header">
+        <div id="header-top">
+            <nav id="container">
+                <ul class="meni">
+                    <li id="zaputnike" onclick="putnik()"><a id="putnici-btn" role="button" href="index.html">Za
+                            putnike</a></li>
+                    <li id="kompanije" onclick="kompanija()"><a id="kompanije" role="button" href="index.html">Za
+                            kompanije</a></li>
+                    <li id="o-nama" onclick="nama()"><a id="onama" role="button" href="index.html">O nama</a></li>
+                    <li class="autor"><a href="o-autoru.html">O autoru</a></li>
+                    <li><a href="AuroraAir.zip" id="zip-main" download>Zip sajta</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div id="header-bottom">
+            <section id="logo">
+                <img src="assets/img/logo2.png" alt="Aurora Air - Logo" id="logo-pic" />
+            </section>
+            <button id="hamburger" aria-label="Menu">
+                <span class="gg-menu"></span>
+            </button>
+            <nav id="container-bottom">
+                <ul id="meni-bottom">
+                    <li id="items-bottom1"><a href="#">Rezerviši</a></li>
+                    <li id="items-bottom2"><a href="#">Moja rezervacija</a></li>
+                    <li id="items-bottom3"><a href="#">Check-in</a></li>
+                    <li id="items-bottom4"><a href="#" id="go-find">Otkrij</a></li>
+                    <li id="items-bottom5"><a href="#" id="go-info">Info | Pomoć</a></li>
+                    <li class="items-bottom"><a href="#" id="go-contact">Kontakt</a></li>
+                </ul>
+                <button id="prijavi-se">Prijavi se</button>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <div id="author-main">
+            <img src="assets/img/background1.jpg" alt="background-pic" class="bg-img" />
+
+            <div class="author-card">
+                <img src="assets/img/author.jpeg" alt="author-pic" class="author-img" />
+
+                <div class="author-text">
+                    <h2>Aleksa Jovanović</h2>
+                    <h4>119/24</h4>
+                    <p>
+                        Moje ime je Aleksa Jovanović, studiram na Visokoj ICT školi.<br>
+                        Volim da treniram i da putujem.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer id="footer">
+        <div class="footer-container">
+            <div class="footer-col">
+                <h3>Aurora Air ✈️</h3>
+                <p>Let sa stilom, putuj sa emocijom.<br>
+                    Tvoja priča počinje uz nas.</p>
+            </div>
+            <div class="footer-col">
+                <h4>General</h4>
+                <ul>
+                    <li><a href="sitemap.xml">Sitemap</a></li>
+                    <li><a href="#city">Dokumentacija</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Lokacije</h4>
+                <ul>
+                    <li>Beograd — Nikola Tesla</li>
+                    <li>Niš — Konstantin Veliki</li>
+                    <li>Kraljevo — Morava</li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Zapratite nas</h4>
+                <div class="social-icons">
+                    <a href="https://www.instagram.com/" class="gg-instagram"><span></span></a>
+                    <a href="mailto:aleksa.jovanovic.119.24@ict.edu.rs" class="gg-google"><span></span></a>
+                    <a href="https://www.facebook.com/" class="gg-facebook"><span></span></a>
+                    <a href="https://www.youtube.com/" class="gg-youtube"><span></span></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2025 Aurora Air — Designed by Aleksa Jovanović</p>
+        </div>
+    </footer>
+    <div class="modal fade" id="customAlert" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Rezervacija</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body" id="customAlertBody">
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">OK</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script type="text/javascript" src="assets/js/main.js"></script>
+</body>
+
+</html>

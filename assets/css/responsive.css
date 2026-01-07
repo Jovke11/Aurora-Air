@@ -1,0 +1,721 @@
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+section {
+    padding-left: 16px;
+    padding-right: 16px;
+}
+
+@media (max-width: 1400px) {
+    #container {
+        margin-right: 80px;
+    }
+
+    #logo {
+        padding-left: 80px;
+    }
+
+    #container-bottom {
+        margin-right: 80px;
+    }
+
+    .hero-wrapper {
+        left: 80px;
+        gap: 40px;
+    }
+
+    .flight-search {
+        margin-left: 0;
+    }
+
+    #city,
+    #city2 {
+        gap: 40px;
+    }
+}
+
+@media (max-width: 1024px) {
+    body {
+        padding-top: 100px;
+    }
+
+    #header {
+        height: auto;
+    }
+
+    #container {
+        float: none;
+        margin: 0;
+        text-align: center;
+    }
+
+    .meni {
+        justify-content: center;
+        gap: 20px;
+        flex-wrap: wrap;
+    }
+
+    #header-bottom {
+        flex-direction: column;
+        gap: 20px;
+        padding: 10px 0;
+    }
+
+    #logo {
+        padding-left: 0;
+    }
+
+    #container-bottom {
+        margin-right: 0;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    #meni-bottom {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 25px;
+    }
+
+    #prijavi-se {
+        margin-left: 0;
+    }
+
+    #background {
+        height: auto;
+        min-height: 900px;
+    }
+
+    .hero-wrapper {
+        position: relative;
+        left: 0;
+        top: 0;
+        transform: none;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding-top: 80px;
+    }
+
+    .background-content h1 {
+        font-size: 44px;
+        line-height: 54px;
+    }
+
+    .flight-search {
+        width: 100%;
+        max-width: 420px;
+    }
+
+    #city,
+    #city2 {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #athens,
+    #berlin,
+    #rome,
+    #firenca {
+        width: 100%;
+        max-width: 600px;
+    }
+
+    #slider img {
+        height: 500px;
+    }
+
+    #travel {
+        font-size: 60px;
+    }
+
+    #contact {
+        flex-direction: column;
+        height: auto;
+        align-items: center;
+        gap: 60px;
+    }
+
+    .contact-wrapper {
+        margin-left: 0;
+        width: 100%;
+        max-width: 600px;
+        text-align: center;
+    }
+
+    #work-time {
+        margin: 0;
+        width: 100%;
+        max-width: 600px;
+    }
+}
+
+@media (max-width: 768px) {
+    .meni {
+        gap: 15px;
+        font-size: 12px;
+    }
+
+    #meni-bottom {
+        gap: 15px;
+        font-size: 14px;
+    }
+
+    .background-content h1 {
+        font-size: 34px;
+        line-height: 42px;
+    }
+
+    .background-content h5 {
+        font-size: 16px;
+    }
+
+    .flight-search {
+        padding: 20px;
+    }
+
+    #athens-title,
+    #berlin-title,
+    #rome-title,
+    #firenca-title {
+        font-size: 32px;
+        text-align: center;
+    }
+
+    .price p {
+        float: none;
+        text-align: center;
+        margin: 10px 0;
+    }
+
+    .order {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #slider img {
+        height: 380px;
+    }
+
+    #travel {
+        font-size: 42px;
+        padding: 0 10px;
+    }
+
+    #world {
+        font-size: 40px;
+        margin-top: 60px;
+    }
+
+    #contact-h2 {
+        font-size: 42px;
+    }
+
+    .airport-call,
+    .message {
+        float: none;
+        margin: 10px auto;
+        display: block;
+        width: 80%;
+    }
+
+    #name-contact {
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+        margin-top: 20px;
+    }
+
+    .form-contact,
+    #question-contact {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        padding-top: 90px;
+    }
+
+    .background-content h1 {
+        font-size: 28px;
+        line-height: 36px;
+    }
+
+    .flight-search h2 {
+        font-size: 18px;
+    }
+
+    .trip-type {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    #travel {
+        font-size: 32px;
+    }
+
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .footer-col {
+        width: 100%;
+    }
+}
+
+@media (max-width: 360px) {
+    #contact {
+        flex-direction: column;
+        height: auto;
+        margin-top: 80px;
+        gap: 30px;
+        padding: 0 12px;
+    }
+
+    .contact-wrapper {
+        width: 100%;
+        height: auto;
+        margin: 0;
+        text-align: center;
+    }
+
+    #contact-h2 {
+        font-size: 28px;
+        line-height: 34px;
+        margin-bottom: 10px;
+    }
+
+    .contact-subtitle {
+        font-size: 13px;
+        line-height: 18px;
+        padding: 0 10px;
+        margin-bottom: 20px;
+    }
+
+    #name-contact {
+        width: 100%;
+        height: auto;
+        margin-top: 20px;
+    }
+
+    .form-contact {
+        height: 52px;
+        font-size: 14px;
+        padding-left: 18px;
+        margin-bottom: 18px;
+    }
+
+    #question-contact {
+        height: 140px;
+        font-size: 14px;
+    }
+
+    .check-wrapper {
+        font-size: 13px;
+        margin-top: 10px;
+        text-align: center;
+    }
+
+    .btn-wrapper {
+        margin-top: 25px;
+        text-align: center;
+    }
+
+    #taster {
+        width: 100%;
+        max-width: 220px;
+        padding: 12px 0;
+        font-size: 15px;
+        border-radius: 25px;
+        box-shadow: 0 6px 15px rgba(0, 123, 255, 0.35);
+    }
+
+    #work-time {
+        width: 100%;
+        height: auto;
+        margin: 0;
+    }
+
+    .airport-bgn {
+        height: auto;
+        padding: 15px;
+        text-align: center;
+        margin-top: 30px;
+    }
+
+    .airport-bgn h2 {
+        font-size: 18px;
+    }
+
+    .airport-bgn p {
+        font-size: 14px;
+        margin: 10px 0;
+    }
+
+    .airport-call,
+    .message {
+        float: none;
+        margin: 10px auto;
+        display: block;
+        width: 100%;
+        max-width: 220px;
+        padding: 10px 0;
+    }
+
+    .social-icons {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 768px) {
+
+    #contact,
+    .contact-wrapper,
+    #work-time {
+        height: auto !important;
+        min-height: unset !important;
+        float: none;
+        display: block;
+    }
+
+    #contact {
+        flex-direction: column;
+        gap: 40px;
+        padding: 0 20px 120px;
+        margin-top: 80px;
+    }
+
+    .contact-wrapper,
+    #work-time {
+        width: 100%;
+        max-width: 600px;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    #name-contact,
+    .form-contact,
+    #question-contact {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .airport-bgn {
+        height: auto;
+        padding: 20px;
+    }
+
+    .airport-call,
+    .message {
+        float: none;
+        margin: 15px auto;
+        display: block;
+        width: 90%;
+        max-width: 320px;
+    }
+
+    #prijavi-se {
+        display: none;
+    }
+}
+
+@media (max-width: 1200px) {
+    #contact {
+        flex-direction: column;
+        align-items: center;
+        gap: 60px;
+
+    }
+
+    footer {
+        position: static;
+        clear: both;
+    }
+
+    .contact-wrapper,
+    #work-time {
+        width: 100%;
+        max-width: 700px;
+        margin: 0 auto;
+    }
+
+    #prijavi-se {
+        display: inline-block;
+        margin-left: 0;
+    }
+}
+
+@media (min-width: 1025px) and (max-width: 1200px) {
+    .contact-wrapper {
+        width: 100%;
+        max-width: 100%;
+        margin-left: 0;
+        padding-right: 40px;
+    }
+
+    #name-contact {
+        width: 100%;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    .contact-wrapper {
+        width: 100%;
+        max-width: 100%;
+        margin-left: 0;
+        padding-right: 40px;
+    }
+
+    #name-contact {
+        width: 100%;
+    }
+}
+
+@media (max-width: 473px) {
+    .social-icons {
+        justify-content: center;
+    }
+}
+
+#zip-mobile {
+    display: none;
+}
+
+@media (max-width: 440px) {
+    #header-top #zip-main {
+        display: none;
+    }
+
+    #zip-mobile {
+        display: inline-block;
+        background-color: #005fcc;
+        color: #fff;
+        font-size: 12px;
+        padding: 5px 5px;
+        border-radius: 12px;
+        font-weight: 600;
+        text-decoration: none;
+        margin-left: 10px;
+    }
+
+    #logo {
+        display: flex;
+        align-items: center;
+    }
+}
+
+@media (max-width: 1024px) {
+
+    #container,
+    #container-bottom {
+        display: none;
+    }
+
+    #hamburger {
+        display: block;
+        margin-left: auto;
+    }
+
+    #header-bottom {
+        justify-content: flex-start;
+        gap: 16px;
+    }
+}
+
+@media (max-width: 1024px) {
+
+    #hamburger {
+        display: block;
+        background: none;
+        border: none;
+
+        font-size: 36px;
+        line-height: 1;
+
+        padding: 8px 4px;
+        margin-left: auto;
+
+        cursor: pointer;
+        color: #000;
+        z-index: 3000;
+    }
+
+    #hamburger:active {
+        opacity: 0.6;
+    }
+}
+
+@media (max-width: 1024px) {
+    #header-bottom {
+        flex-direction: row !important;
+        justify-content: space-between;
+        align-items: center;
+    }
+}
+
+@media (max-width: 1024px) {
+
+    #logo {
+        margin-right: auto;
+        padding-left: 0;
+        display: flex;
+        align-items: center;
+    }
+
+    #logo-pic {
+        width: 120px;
+    }
+}
+
+@media (max-width: 1024px) {
+
+    #header-bottom {
+        display: flex !important;
+        flex-direction: row !important;
+        justify-content: space-between !important;
+        align-items: center !important;
+        height: 80px;
+        padding: 0 16px;
+    }
+
+    #logo {
+        display: flex;
+        align-items: center;
+        margin-right: auto;
+    }
+
+    #logo-pic {
+        width: 120px;
+    }
+}
+
+@media (min-width: 250px) and (max-width: 1024px) {
+    #hero-img {
+        height: 800px;
+    }
+}
+
+@media (min-width: 300px) and (max-width: 1024px) {
+    .background-content {
+        position: absolute;
+        top: -50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 5;
+        text-align: center;
+        color: #fff;
+        width: 100%;
+        padding: 0 16px;
+    }
+}
+
+@media (min-width: 300px) and (max-width: 1024px) {
+
+    .background-content h1,
+    .background-content h5 {
+        text-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
+    }
+}
+
+@media (max-width: 768px) {
+
+    .author-card {
+        width: 90%;
+        max-width: 720px;
+        padding: 24px;
+        margin: 0 auto;
+    }
+
+    .author-img {
+        width: 100%;
+        height: auto;
+        max-width: 550px;
+    }
+
+    .author-text h2 {
+        font-size: 22px;
+    }
+
+    .author-text h4 {
+        font-size: 16px;
+    }
+
+    .author-text p {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .author-card {
+        width: 95%;
+        padding: 20px;
+        border-radius: 16px;
+    }
+
+    .author-img {
+        width: 140px;
+        height: 140px;
+        border-radius: 14px;
+    }
+
+    .author-text h2 {
+        font-size: 20px;
+    }
+
+    .author-text h4 {
+        font-size: 14px;
+    }
+
+    .author-text p {
+        font-size: 13px;
+        line-height: 1.5;
+    }
+}
+
+@media (max-width: 1024px) {
+    #container-bottom {
+        display: none;
+        position: absolute;
+        top: 80px;
+        left: 0;
+        width: 100%;
+        background: #fff;
+        padding: 20px 0;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        z-index: 2000;
+    }
+
+    #container-bottom.active {
+        display: block;
+    }
+
+    #meni-bottom {
+        flex-direction: column;
+        gap: 20px;
+        align-items: center;
+    }
+}
+@media (min-width: 250px) and (max-width: 480px) {
+
+    .author-card {
+        width: 100%;
+        padding: 16px;
+        box-sizing: border-box;
+    }
+
+    .author-img {
+        display: block;
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+        border-radius: 16px;
+        margin: 0 auto 16px auto;
+        object-fit: cover;
+    }
+}

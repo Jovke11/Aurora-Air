@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="sr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description"
+        content="Aurora Air nudi brzu i jednostavnu pretragu letova, povoljne cene, udobna sedišta i sigurno putovanje ka najpopularnijim svetskim destinacijama." />
+    <meta name="keywords"
+        content="Aurora Air, avio kompanija, letovi, avionske karte, rezervacija letova, pretraga letova, avio sajt, online booking, putovanja, destinacije" />
+    <meta name="author" content="Aleksa Jovanović" />
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <title>Aurora Air | Online rezervacija</title>
+    <link rel="shortcut icon" type="image/ico" href="assets/img/ikonica.png" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link rel="stylesheet" href="assets/css/responsive.css"/>
+    <link rel="sitemap" type="application/xml" href="sitemap.xml"/>
+</head>
+
+<body>
+    <header id="header">
+        <div id="header-top">
+            <nav id="container">
+                <ul class="meni">
+                    <li id="zaputnike" onclick="putnik()"><a id="putnici-btn" role="button">Za putnike</a></li>
+                    <li id="kompanije" onclick="kompanija()"><a id="kompanije" role="button">Za kompanije</a></li>
+                    <li id="o-nama" onclick="nama()"><a id="onama" role="button">O nama</a></li>
+                    <li class="autor"><a href="o-autoru.html">O autoru</a></li>
+                    <li><a href="AuroraAir.zip" id="zip-main" download>Zip sajta</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div id="header-bottom">
+            <section id="logo">
+                <img src="assets/img/logo2.png" alt="Aurora Air - Logo" id="logo-pic" />
+            </section>
+            <button id="hamburger" aria-label="Menu">
+                <span class="gg-menu"></span>
+            </button>
+            <nav id="container-bottom">
+                <ul id="meni-bottom">
+                    <li id="items-bottom1"><a href="#">Rezerviši</a></li>
+                    <li id="items-bottom2"><a href="#">Moja rezervacija</a></li>
+                    <li id="items-bottom3"><a href="#">Check-in</a></li>
+                    <li id="items-bottom4"><a href="#" id="go-find">Otkrij</a></li>
+                    <li id="items-bottom5"><a href="#" id="go-info">Info | Pomoć</a></li>
+                    <li class="items-bottom"><a href="#" id="go-contact">Kontakt</a></li>
+                </ul>
+                <button id="prijavi-se">Prijavi se</button>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <section id="background">
+            <img src="assets/img/background1.jpg" alt="Hero slika" id="hero-img" />
+            <div class="hero-wrapper">
+                <div class="background-content">
+                    <h1>
+                        Svaki let je<br> nova priča,<br> svaka destinacija<br> nova uspomena
+                    </h1>
+                    <h5>
+                        Mi brinemo o letu, ti uživaj u putovanju!
+                    </h5>
+                </div>
+                <div class="flight-search" id="search-flight">
+                    <h2>Kupi kartu online, odmah brzo i lako!</h2>
+                    <div class="trip-type">
+                        <button id="povratni" class="trip-btn active" type="button">Povratni</button>
+                        <button id="jedanSmer" class="trip-btn" type="button" data-tip="Jedan smer">Jedan smer</button>
+                        <button onclick="resetForme()">Reset</button>
+                    </div>
+                    <form id="flight-form">
+                        <div class="input-group">
+                            <label>Od</label>
+                            <select id="od">
+                                <option value="od" class="chose">Od</option>
+                                <option value="bg">Beograd</option>
+                                <option value="ni">Niš</option>
+                                <option value="kr">Kraljevo</option>
+                            </select>
+                        </div>
+                        <div class="input-group">
+                            <label>Do</label>
+                            <select id="do">
+                                <option value="do">Do</option>
+                                <option value="at">Atina</option>
+                                <option value="be">Berlin</option>
+                                <option value="ci">Cirih</option>
+                                <option value="de">Denver</option>
+                                <option value="it">Rim</option>
+                                <option value="fi">Firenca</option>
+                            </select>
+                        </div>
+                        <div class="input-group">
+                            <span class="icon">📅 Datum polaska</span>
+                            <label>Datum polaska</label>
+                            <input type="date" id="datumPolaska">
+                        </div>
+                        <div class="input-group">
+                            <span class="icon">📅 Datum povratka</span>
+                            <label>Datum povratka</label>
+                            <input type="date" id="datumPovratka">
+                        </div>
+
+                        <div class="input-group">
+                            <label>Putnici</label>
+                            <input type="number" placeholder="Broj putnika" min="1" id="putnici">
+                        </div>
+                        <div class="input-group">
+                            <label>Promo kod</label>
+                            <input type="text" placeholder="🏷️ Promo kod (ICT)" id="promo-kod">
+                        </div>
+                        <button type="submit" class="search" onclick="kupiKartu(event)">Kupi kartu</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+        <section id="city">
+            <div id="athens">
+                <img src="assets/img/atina.jpg" alt="atina" />
+                <h4 id="athens-title">Atina, Grčka</h4>
+                <span id="athens-span">Polazak: 29.12 - 3.1</span>
+                <div class="price">
+                    <p class="new-price">149€</p>
+                    <p class="old-price">189€</p>
+                </div>
+                <div class="city-info">
+                    Putovanje započinje na Aerodromu Nikola Tesla u Beogradu<br>Sletanje je planirano na Međunarodni
+                    aerodrom Atina „Eleftherios Venizelos“<br><br>
+                    <h5 class="sobe">Preostale sobe: 2</h5> 🛏️ Broj ležaja: 4
+                    <br> 🏢 Hotel: Achilion 3 <br>🙍‍♂️ Vodič: uključen
+                </div>
+                <div class="order">
+                    <input type="button" onclick="rezervisi()" class="rezervisi" value="Rezerviši">
+                    <input type="button" class="toggle-info" data-target="#athens-info" value="Saznaj više">
+                </div>
+            </div>
+            </div>
+            <div id="berlin">
+                <img src="assets/img/berlin.jpg" alt="berlin" />
+                <h4 id="berlin-title">Berlin, Nemačka</h4>
+                <span id="berlin-span">Polazak: 12.1 - 24.1</span>
+                <div class="price">
+                    <p class="new-price">299€</p>
+                    <p class="old-price">329€</p>
+                </div>
+                <div class="city-info">
+                    Polazak je planiran sa Aerodroma Konstantin Veliki u Nišu u kasnim večernjim satima.<br> Let do
+                    Berlina
+                    traje približno 2 sata, uz direktnu liniju i mirno putovanje.
+                    <br>Sletanje je predviđeno na Aerodrom Berlin Brandenburg (BER).<br><br>
+                    <h5 class="sobe">Preostale sobe: 1</h5>
+                    🛏️ Broj ležaja: 3
+                    <br> 🏢 Hotel: Premier Inn Berlin Alexanderplatz<br>🙍‍♂️ Vodič: uključen
+                </div>
+                <div class="order">
+                    <input type="button" onclick="rezervisi()" class="rezervisi" value="Rezerviši">
+                    <input type="button" class="toggle-info" data-target="#berlin-info" value="Saznaj više">
+                </div>
+            </div>
+        </section>
+        <section id="city2">
+            <div id="rome">
+                <img src="assets/img/rim.jpg" alt="Rim" />
+                <h4 id="rome-title">Rim, Italija</h4>
+                <span id="rome-span">Polazak: 10.3 - 17.3</span>
+                <div class="price">
+                    <p class="new-price">279€</p>
+                    <p class="old-price">299€</p>
+                </div>
+                <div class="city-info">
+                    Polazak je planiran sa Aerodroma Nikola Tesla u Beogradu u kasnim večernjim satima.<br> Let do
+                    Rima
+                    traje približno 2 sata, uz direktnu liniju i mirno putovanje.
+                    <br>Sletanje je predviđeno na Aerodrom Leonardo da Vinci - Fiumicino.<br><br>
+                    <h5>Preostale sobe: 4</h5>
+                    🛏️ Broj ležaja: 1
+                    <br> 🏢 Hotel: Trastevere Roma | UNA Esperienze<br>🙍‍♂️ Vodič: uključen
+                </div>
+                <div class="order">
+                    <input type="button" onclick="rezervisi()" class="rezervisi" value="Rezerviši">
+                    <input type="button" class="toggle-info" data-target="#rome-info" value="Saznaj više">
+                </div>
+            </div>
+            <div id="firenca">
+                <img src="assets/img/firenca.jpg" alt="Firenca" />
+                <h4 id="firenca-title">Firenca, Italija</h4>
+                <span id="firenca-span">Polazak: 11.4 - 18.4</span>
+                <div class="price">
+                    <p class="new-price">350€</p>
+                    <p class="old-price">420€</p>
+                </div>
+                <div class="city-info">
+                    Polazak je planiran sa Aerodroma Nikola Tesla u Beogradu u ranim jutarnjim satima.<br> Let do
+                    Firence
+                    traje približno 2 sata i 30 minuta, uz direktnu liniju i mirno putovanje.
+                    <br>Sletanje je predviđeno na Aerodrom Amerigo Vespucci.<br><br>
+                    <h5>Preostale sobe: 5</h5>
+                    🛏️ Broj ležaja: 2
+                    <br> 🏢 Hotel: Hotel Calimala Florence<br>🙍‍♂️ Vodič: uključen
+                </div>
+                <div class="order">
+                    <input type="button" onclick="rezervisi()" class="rezervisi" value="Rezerviši">
+                    <input type="button" class="toggle-info" data-target="#rome-info" value="Saznaj više">
+                </div>
+            </div>
+        </section>
+        <div id="text-under">
+            <h1 id="world">Na kraju, samo je jedno važno</h1>
+        </div>
+        <section id="slider">
+            <img src="assets/img/zalazak.jpg" id="sliderImg" alt="slider" />
+            <h1 id="travel">Proputovati ceo svet</h1>
+        </section>
+        <section id="contact">
+            <div class="contact-wrapper">
+                <h2 id="contact-h2">Prijava i Lokacija</h2>
+                <p class="contact-subtitle">Prijavite se i ostvarite velike popuste na sledeće letove!</p>
+                <div id="name-contact"></div>
+            </div>
+            <div id="work-time">
+                <div class="airport-bgn">
+                    <h2>📍 Aerodrom Nikola Tesla</h2>
+                    <p><br> Grad: Beograd <br> Adresa: Aerodrom Beograd <br> Radno vreme: 24/7 <br> Broj telefona: 011
+                        2094444</p>
+                    <input type="button" class="airport-call" value="Pozovi" />
+                    <input type="button" class="message" value="Poruka" />
+                </div>
+                <div class="airport-bgn">
+                    <h2>📍 Aerodrom Konstantin Veliki</h2>
+                    <p><br>Grad: Niš <br> Adresa: Ulica 24 <br> Radno vreme: 24/7 <br> Broj telefona: 018 4583336</p>
+                    <input type="button" class="airport-call" value="Pozovi" />
+                    <input type="button" class="message" value="Poruka" />
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer id="footer">
+        <div class="footer-container">
+            <div class="footer-col">
+                <h3>Aurora Air ✈️</h3>
+                <p>Let sa stilom, putuj sa emocijom.<br>
+                    Tvoja priča počinje uz nas.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Navigacija</h4>
+                <ul>
+                    <li><a href="#search-flight">Rezerviši</a></li>
+                    <li><a href="#city">Destinacije</a></li>
+                    <li><a href="#contact">Kontakt</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Lokacije</h4>
+                <ul>
+                    <li>Beograd — Nikola Tesla</li>
+                    <li>Niš — Konstantin Veliki</li>
+                    <li>Kraljevo — Morava</li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Zapratite nas</h4>
+                <div class="social-icons">
+                    <a href="https://www.instagram.com/" class="gg-instagram"><span></span></a>
+                    <a href="mailto:aleksa.jovanovic.119.24@ict.edu.rs" class="gg-google"><span></span></a>
+                    <a href="https://www.facebook.com/" class="gg-facebook"><span></span></a>
+                    <a href="https://www.youtube.com/" class="gg-youtube"><span></span></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2025 Aurora Air — Designed by Aleksa Jovanović</p>
+        </div>
+    </footer>
+    <div class="modal fade" id="customAlert" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Rezervacija</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body" id="customAlertBody">
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">OK</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <nav id="mobile-menu">
+        <ul class="mobile-top">
+            <li><a href="#">Za putnike</a></li>
+            <li><a href="#">Za kompanije</a></li>
+            <li><a href="#">O nama</a></li>
+            <li><a href="o-autoru.html">O autoru</a></li>
+            <li><a href="AuroraAir.zip" download>Zip sajta</a></li>
+        </ul>
+
+        <hr>
+
+        <ul class="mobile-bottom">
+            <li><a href="#search-flight">Rezerviši</a></li>
+            <li><a href="#search-flight">Moja rezervacija</a></li>
+            <li><a href="#search-flight">Check-in</a></li>
+            <li><a href="#city">Otkrij</a></li>
+            <li><a href="#">Info | Pomoć</a></li>
+            <li><a href="#contact">Kontakt</a></li>
+        </ul>
+
+        <a href="#contact" class="mobile-login">Prijavi se</a>
+    </nav>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script type="text/javascript" src="assets/js/main.js"></script>
+</body>
+
+</html>
