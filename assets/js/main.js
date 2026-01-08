@@ -281,4 +281,4 @@ $("#mobile-menu a").on("click", function (e) {
         $("#mobile-menu").removeClass("active");
     }
 })
-
+dodacu nesto za test samo
