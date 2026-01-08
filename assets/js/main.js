@@ -19,7 +19,7 @@ function kompanija() {
         html += `<li><a href="#">${kompanijeMenu[i]}</a></li>`;
     }
     document.getElementById("meni-bottom").innerHTML = html;
-    console.log("test");
+    
     
     document.getElementsByClassName("mobile-bottom")[0].innerHTML = html;
 }
@@ -272,12 +272,27 @@ $("#go-info").click(function(e) {
         });
 });    
 $("#hamburger").on("click", function () {
-    console.log("hamb");
+    
     
     $("#mobile-menu").toggleClass("active");
 });
-$("#mobile-menu a").on("click", function (e) {
-    if(e.getAttribute("href") != "#") {
-        $("#mobile-menu").removeClass("active");
+$(document).on("click", "a[href^='#']", function (e) {
+    const targetId = $(this).attr("href");
+
+    if (targetId === "#" || targetId === "") return;
+
+    e.preventDefault();
+
+    const targetEl = document.querySelector(targetId);
+
+    if (targetEl) {
+        targetEl.scrollIntoView({
+            behavior: "smooth",
+            block: "start"
+        });
     }
-})
+
+    
+    $("#mobile-menu").removeClass("active");
+});
+
