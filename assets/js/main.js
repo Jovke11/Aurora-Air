@@ -4,6 +4,7 @@ window.onload = function () {
 };
 function putnik() {
     document.getElementById("meni-bottom").innerHTML = defaultMenu;
+    document.getElementsByClassName("mobile-bottom")[0].innerHTML = defaultMenu;
 }
 const kompanijeMenu = [
     "Korporativna prodaja",
@@ -18,6 +19,9 @@ function kompanija() {
         html += `<li><a href="#">${kompanijeMenu[i]}</a></li>`;
     }
     document.getElementById("meni-bottom").innerHTML = html;
+    console.log("test");
+    
+    document.getElementsByClassName("mobile-bottom")[0].innerHTML = html;
 }
 const onamaMenu = [
     "Naša priča",
@@ -32,10 +36,8 @@ function nama() {
         html += `<li><a href="#">${onamaMenu[i]}</a></li>`;
     }
     document.getElementById("meni-bottom").innerHTML = html;
+    document.getElementsByClassName("mobile-bottom")[0].innerHTML = html;
 }
-document.getElementById("putnici").addEventListener("click", function () {
-    promeniListuPutnici();
-});
 const gradOd = [
     "Beograda",
     "Niša",
@@ -106,21 +108,21 @@ function resetForme() {
 }
 const povratniBtn = document.getElementById("povratni");
 const jedanSmerBtn = document.getElementById("jedanSmer");
-povratniBtn.addEventListener("click", function () {
+$(povratniBtn).click(function () {
     povratniBtn.classList.add("active");
     jedanSmerBtn.classList.remove("active");
 });
-jedanSmerBtn.addEventListener("click", function () {
+$(jedanSmerBtn).click(function () {
     jedanSmerBtn.classList.add("active");
     povratniBtn.classList.remove("active");
 });
 let tipLeta = "Povratni";
-document.getElementById("povratni").onclick = function () {
+$("#povratni").click(function () {
     tipLeta = "Povratni";
-};
-document.getElementById("jedanSmer").onclick = function () {
+})
+$("#jedanSmer").click(function () {
     tipLeta = "Jedan smer";
-};
+})
 function showCustomAlert(message) {
     document.getElementById("customAlertBody").innerHTML = message;
     var myModal = new bootstrap.Modal(document.getElementById('customAlert'));
@@ -147,6 +149,9 @@ $(document).ready(function () {
 });
 let sliderImg = document.getElementById("sliderImg");
 function slider() {
+    if(sliderImg == null) {
+        return;
+    }
     if (sliderImg.src.includes("zalazak")) {
         sliderImg.src = "assets/img/plaza.jpg";
     }
@@ -197,8 +202,10 @@ kontaktForma += "<div class='btn-wrapper'>" +
 
 kontaktForma += "</form>";
 
-document.getElementById("name-contact").innerHTML = kontaktForma;
-document.getElementById("taster").addEventListener("click", function() {
+if(document.getElementById("name-contact") != null) {
+    document.getElementById("name-contact").innerHTML = kontaktForma;
+}
+$("#taster").click(function() {
     const imeInput = document.getElementById("lastname-contact");
     const emailInput = document.getElementById("mail-contact");
     const brojInput = document.getElementById("number-contact");
@@ -239,35 +246,39 @@ document.getElementById("taster").addEventListener("click", function() {
     if (!greska) {
         showCustomAlert("Forma je uspešno poslata!");
     }
-});
-document.getElementById("prijavi-se").addEventListener("click", function () {
+})
+$("#prijavi-se").click(function () {
     document.getElementById("contact").scrollIntoView({
         behavior: "smooth"
     });
-});
+})
 
-document.getElementById("go-find").addEventListener("click", function(e) {
+$("#go-find").click(function(e) {
     e.preventDefault();
     document.getElementById("athens").scrollIntoView({
          behavior: "smooth" 
     });
 });
-document.getElementById("go-contact").addEventListener("click", function(e) {
+$("#go-contact").click(function(e) {
     e.preventDefault();
     document.getElementById("contact").scrollIntoView({ 
         behavior: "smooth" 
     });
 });
-document.getElementById("go-info").addEventListener("click", function(e) {
+$("#go-info").click(function(e) {
     e.preventDefault();
     document.getElementById("contact").scrollIntoView({
          behavior: "smooth" 
         });
 });    
 $("#hamburger").on("click", function () {
+    console.log("hamb");
+    
     $("#mobile-menu").toggleClass("active");
 });
-$("#mobile-menu a").on("click", function () {
-    $("#mobile-menu").removeClass("active");
+$("#mobile-menu a").on("click", function (e) {
+    if(e.getAttribute("href") != "#") {
+        $("#mobile-menu").removeClass("active");
+    }
 })
 
