@@ -719,7 +719,7 @@ section {
         object-fit: cover;
     }
 }
-@media (max-width: 1366px) {
+@media (min-width: 1025px) and (max-width: 1440px) {
     .flight-search {
         padding-top: 30px;
     }
