@@ -719,3 +719,11 @@ section {
         object-fit: cover;
     }
 }
+@media (max-width: 1366px) {
+    .flight-search {
+        padding-top: 30px;
+    }
+    .background-content {
+        padding-top: 30px;
+    }
+}
