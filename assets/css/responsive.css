@@ -721,9 +721,9 @@ section {
 }
 @media (min-width: 1400px) and (max-width: 1440px) {
     .flight-search {
-        padding-top: 40px;
+        padding-top: 80px;
     }
     .background-content {
-        padding-top: 40px;
+        padding-top: 80px;
     }
 }
