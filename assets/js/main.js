@@ -295,6 +295,7 @@ $(document).on("click", "a[href^='#']", function (e) {
     
     $("#mobile-menu").removeClass("active");
 });
+
 window.addEventListener("load", function () {
     const today = new Date().toISOString().split("T")[0];
 
