@@ -1,3 +1,51 @@
+const navigacijaTop = [
+    { text: "Za putnike", klik: "putnik()" },
+    { text: "Za kompanije", klik: "kompanija()" },
+    { text: "O nama", klik: "nama()" },
+    { text: "O autoru", href: "o-autoru.html", class: "autor" },
+    { text: "Zip sajta", href: "AuroraAir.zip", id: "zip-main", download: true }
+];
+function renderTopMenu() {
+    let html = "";
+
+    for (let i = 0; i < navigacijaTop.length; i++) {
+        html += "<li";
+
+        if (navigacijaTop[i].class) {
+            html += " class='" + navigacijaTop[i].class + "'";
+        }
+
+        if (navigacijaTop[i].klik) {
+            html += " onclick=\"" + navigacijaTop[i].klik + "\"";
+        }
+
+        html += ">";
+
+        html += "<a";
+
+        if (navigacijaTop[i].href) {
+            html += " href='" + navigacijaTop[i].href + "'";
+        } else {
+            html += " role='button'";
+        }
+
+        if (navigacijaTop[i].id) {
+            html += " id='" + navigacijaTop[i].id + "'";
+        }
+
+        if (navigacijaTop[i].download) {
+            html += " download";
+        }
+
+        html += ">";
+
+        html += navigacijaTop[i].text;
+        html += "</a></li>";
+    }
+
+    document.getElementById("meni-top").innerHTML = html;
+}
+
 const navigacije = {
     putnici: [
         { text: "Rezerviši", id: "items-bottom1", href: "#background" },
@@ -42,7 +90,9 @@ function nama() { renderMenu(navigacije.onama); }
 
 document.addEventListener("DOMContentLoaded", function () {
     renderMenu(navigacije.putnici);
+    renderTopMenu();
 });
+
 
 const gradOd = ["Beograda", "Niša", "Kraljeva"];
 const gradDo = ["Atine", "Berlina", "Ciriha", "Denvera", "Rima", "Firence"];
@@ -115,13 +165,7 @@ function rezervisi() {
     });
 }
 
-$(document).ready(function () {
-    $('.toggle-info').click(function () {
-        const info = $(this).closest('#athens, #berlin, #rome, #firenca').find('.city-info');
-        info.toggle();
-        $(this).val(info.is(':visible') ? 'Prikaži manje' : 'Saznaj više');
-    });
-});
+
 
 let sliderImg = document.getElementById("sliderImg");
 let slike = [
@@ -260,4 +304,25 @@ window.addEventListener("load", function () {
 
    
     updatePovratakMin();
+});
+
+$(document).ready(function () {
+
+    $(".city-info").hide();
+
+    $(document).on("click", ".toggle-info", function (e) {
+        e.preventDefault();
+        e.stopPropagation();
+
+        const info = $(this).closest("div[id]").find(".city-info").first();
+
+        info.stop(true, true).slideToggle(300);
+
+        if ($(this).val() === "Saznaj više") {
+            $(this).val("Prikaži manje");
+        } else {
+            $(this).val("Saznaj više");
+        }
+    });
+
 });
